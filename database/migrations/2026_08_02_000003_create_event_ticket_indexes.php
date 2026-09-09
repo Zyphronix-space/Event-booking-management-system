@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 return new class extends Migration
 {
     /**
-     * Index 1 & 2 from the report — Event_Name search optimization and
+     * Index 1 & 2 from the report: Event_Name search optimization and
      * Booking.Customer_ID lookup optimization. Both already exist on the
      * hand-built report database; IF NOT EXISTS keeps this idempotent for
      * a fresh install too.

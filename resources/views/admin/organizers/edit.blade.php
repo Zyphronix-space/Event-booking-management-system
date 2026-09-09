@@ -9,20 +9,20 @@
         @csrf
         @method('PUT')
         <div class="mb-3">
-            <label class="form-label">Organizer Name</label>
-            <input type="text" name="organizer_name" value="{{ old('organizer_name', $organizer->organizer_name) }}" class="form-control" required>
+            <label for="organizer_name" class="form-label">Organizer Name</label>
+            <input id="organizer_name" type="text" name="organizer_name" value="{{ old('organizer_name', $organizer->organizer_name) }}" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label class="form-label">Contact Email</label>
-            <input type="email" name="contact_email" value="{{ old('contact_email', $organizer->contact_email) }}" class="form-control" required>
+            <label for="contact_email" class="form-label">Contact Email</label>
+            <input id="contact_email" type="email" name="contact_email" value="{{ old('contact_email', $organizer->contact_email) }}" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label class="form-label">Contact Number</label>
-            <input type="text" name="contact_number" value="{{ old('contact_number', $organizer->contact_number) }}" class="form-control">
+            <label for="contact_number" class="form-label">Contact Number</label>
+            <input id="contact_number" type="text" name="contact_number" value="{{ old('contact_number', $organizer->contact_number) }}" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" name="username" value="{{ old('username', $organizer->username) }}" class="form-control" required>
+            <label for="username" class="form-label">Username</label>
+            <input id="username" type="text" name="username" value="{{ old('username', $organizer->username) }}" class="form-control" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Password <span class="text-muted small">(leave blank to keep unchanged)</span></label>

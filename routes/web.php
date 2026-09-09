@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
+// Public: Legal pages
+Route::view('/privacy-policy', 'legal.privacy')->name('privacy');
+Route::view('/terms', 'legal.terms')->name('terms');
+
 // Customer: Register / Login
 Route::get('/register', [CustomerAuthController::class, 'showRegister'])->name('customer.register');
 Route::post('/register', [CustomerAuthController::class, 'register']);

@@ -9,12 +9,12 @@
             <form method="POST" action="{{ route('organizer.login') }}">
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label">Username</label>
-                    <input type="text" name="username" value="{{ old('username') }}" class="form-control" required autofocus>
+                    <label for="username" class="form-label">Username</label>
+                    <input id="username" type="text" name="username" value="{{ old('username') }}" class="form-control" required autofocus>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" required>
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" type="password" name="password" class="form-control" required>
                 </div>
                 <button class="btn btn-primary w-100">Login</button>
             </form>

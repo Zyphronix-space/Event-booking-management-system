@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse events and book tickets online. Organizers can list and manage their own events; admins oversee the platform.">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     <title>@yield('title', 'Event Ticket Booking System')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .skip-link{position:absolute;left:-9999px;top:0;background:#000;color:#fff;padding:.5rem 1rem;z-index:1050}
+        .skip-link:focus{left:0}
+        @media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+    </style>
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('events.index') }}">🎫 Event Ticket Booking</a>
+        <a class="navbar-brand" href="{{ route('events.index') }}">Event Ticket Booking</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -72,13 +81,14 @@
     </div>
 </nav>
 
-<div class="container py-4">
+<main id="main-content" class="container py-4 flex-grow-1">
     @if (session('status'))
-        <div class="alert alert-success">{{ session('status') }}</div>
+        <div class="alert alert-success" role="status">{{ session('status') }}</div>
     @endif
 
     @if ($errors->any())
-        <div class="alert alert-danger">
+        <div class="alert alert-danger" role="alert">
+            <p class="mb-1 fw-semibold">There was a problem with your submission:</p>
             <ul class="mb-0">
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -88,7 +98,18 @@
     @endif
 
     @yield('content')
-</div>
+</main>
+
+<footer class="bg-dark text-white-50 py-4 mt-auto">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
+        <span>&copy; {{ date('Y') }} Event Ticket Booking. A student portfolio project by Stephan Wasalathanthrige.</span>
+        <nav aria-label="Legal">
+            <a href="{{ route('privacy') }}" class="text-white-50 me-3">Privacy Policy</a>
+            <a href="{{ route('terms') }}" class="text-white-50 me-3">Terms and Conditions</a>
+            <a href="mailto:stephanwasalathanthrige@gmail.com" class="text-white-50">Contact</a>
+        </nav>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

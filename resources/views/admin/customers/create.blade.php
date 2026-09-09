@@ -8,24 +8,24 @@
     <form method="POST" action="{{ route('admin.customers.store') }}" class="col-md-6">
         @csrf
         <div class="mb-3">
-            <label class="form-label">Full Name</label>
-            <input type="text" name="full_name" value="{{ old('full_name') }}" class="form-control" required>
+            <label for="full_name" class="form-label">Full Name</label>
+            <input id="full_name" type="text" name="full_name" value="{{ old('full_name') }}" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" name="email" value="{{ old('email') }}" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label class="form-label">Phone Number</label>
-            <input type="text" name="phone_number" value="{{ old('phone_number') }}" class="form-control">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" name="username" value="{{ old('username') }}" class="form-control" required>
+            <label for="username" class="form-label">Username</label>
+            <input id="username" type="text" name="username" value="{{ old('username') }}" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" required>
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" name="password" class="form-control" required>
         </div>
         <button class="btn btn-primary">Create Customer</button>
         <a href="{{ route('admin.customers.index') }}" class="btn btn-link">Cancel</a>

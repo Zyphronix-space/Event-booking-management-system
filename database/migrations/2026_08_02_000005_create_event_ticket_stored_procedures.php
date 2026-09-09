@@ -13,8 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         // NOTE: the report's original design put COMMIT/ROLLBACK inside a
-        // nested BEGIN...EXCEPTION...END block. PostgreSQL rejects that —
-        // "cannot commit while a subtransaction is active" — because an
+        // nested BEGIN...EXCEPTION...END block. PostgreSQL rejects that:
+        // "cannot commit while a subtransaction is active", because an
         // EXCEPTION clause implicitly opens a subtransaction, and explicit
         // transaction control is only legal in the procedure's outermost
         // block. Fixed here by keeping the risky DML (and its exception

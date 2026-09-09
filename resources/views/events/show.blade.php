@@ -10,11 +10,11 @@
             <h1>{{ $event->event_name }}</h1>
             <p class="text-muted">{{ $event->category }}</p>
             <ul class="list-group list-group-flush mb-4">
-                <li class="list-group-item">📅 Date: {{ \Illuminate\Support\Carbon::parse($event->event_date)->format('d M Y') }}</li>
-                <li class="list-group-item">📍 Venue: {{ $event->venue }}</li>
-                <li class="list-group-item">🏷️ Ticket Price: Rs. {{ number_format($event->ticket_price, 2) }}</li>
-                <li class="list-group-item">🎤 Organizer: {{ $event->organizer->organizer_name ?? 'Unknown' }}</li>
-                <li class="list-group-item">🎟️ Bookings so far: {{ $bookingCount }}</li>
+                <li class="list-group-item">Date: {{ \Illuminate\Support\Carbon::parse($event->event_date)->format('d M Y') }}</li>
+                <li class="list-group-item">Venue: {{ $event->venue }}</li>
+                <li class="list-group-item">Ticket Price: Rs. {{ number_format($event->ticket_price, 2) }}</li>
+                <li class="list-group-item">Organizer: {{ $event->organizer->organizer_name ?? 'Unknown' }}</li>
+                <li class="list-group-item">Bookings so far: {{ $bookingCount }}</li>
             </ul>
         </div>
 
@@ -29,13 +29,13 @@
                             <input type="hidden" name="event_id" value="{{ $event->event_id }}">
 
                             <div class="mb-3">
-                                <label class="form-label">Quantity</label>
-                                <input type="number" name="quantity" value="1" min="1" max="20" class="form-control" required>
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input id="quantity" type="number" name="quantity" value="1" min="1" max="20" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Payment Method</label>
-                                <select name="payment_method" class="form-select" required>
+                                <label for="payment_method" class="form-label">Payment Method</label>
+                                <select id="payment_method" name="payment_method" class="form-select" required>
                                     <option value="Card">Card</option>
                                     <option value="Cash">Cash</option>
                                 </select>

@@ -5,7 +5,7 @@
 @section('content')
     <h1 class="mb-4">Reports</h1>
 
-    <h3>📊 Stats Report</h3>
+    <h3>Stats Report</h3>
     <div class="row row-cols-1 row-cols-md-5 g-3 mb-5">
         <div class="col">
             <div class="card text-center shadow-sm"><div class="card-body">
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <h3>💰 Sales Report</h3>
+    <h3>Sales Report</h3>
     <div class="table-responsive mb-5">
         <table class="table table-bordered bg-white">
             <thead class="table-light">
@@ -52,7 +52,7 @@
         </table>
     </div>
 
-    <h3>🎪 Event Report</h3>
+    <h3>Event Report</h3>
     <div class="table-responsive">
         <table class="table table-bordered bg-white">
             <thead class="table-light">

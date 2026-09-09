@@ -11,7 +11,7 @@ use Illuminate\Validation\Rule;
 class OrganizerController extends Controller
 {
     /**
-     * Manage Users (Organizers) / Assign Roles use case — admin is the
+     * Manage Users (Organizers) / Assign Roles use case: admin is the
      * only role allowed to create organizer accounts.
      */
     public function index()
